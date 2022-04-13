@@ -5,6 +5,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import Home from './pages/Home'
 
 class App extends React.Component {
   render () {
@@ -22,7 +23,7 @@ class App extends React.Component {
   console.log("sign_out_route:", sign_out_route)
     return (
         <>
-           <h1>Apartment App</h1>
+           <Home />
         </>
     );
   }
