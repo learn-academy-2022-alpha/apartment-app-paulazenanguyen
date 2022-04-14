@@ -6,6 +6,12 @@ import {
   Switch
 } from 'react-router-dom'
 import Home from './pages/Home'
+import ApartmentIndex from './pages/ApartmentIndex'
+import ApartmentNew from './pages/ApartmentNew'
+import ApartmentShow from './pages/ApartmentShow'
+import NotFound from './pages/NotFound'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 class App extends React.Component {
   render () {
@@ -23,10 +29,19 @@ class App extends React.Component {
   console.log("sign_out_route:", sign_out_route)
     return (
         <>
-           <Home />
+          <Header />
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/apartmentshow" component={ApartmentShow} />
+              <Route path="/apartmentindex" component={ApartmentIndex} />
+              <Route path="/apartmentnew" component={ApartmentNew} />
+              <Route component={NotFound} />
+            </Switch>
+          </Router>
+          <Footer />
         </>
     );
   }
 }
-
 export default App
